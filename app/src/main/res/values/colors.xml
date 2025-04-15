@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Buttons, NavBar -->
+    <color name="colorPrimary">#53867B</color>
+
+    <!-- Vectors, Forms elements -->
+    <color name="colorSecondary">#B9E1D9</color>
+
+    <!-- Background -->
+    <color name="colorBackground">#FFFFFF</color>
+
+    <!-- Title, Subtitle -->
+    <color name="colorTitle">#006A71</color>
+
+    <!-- Form elements text -->
+    <color name="colorFormText">#000000</color>
+
+    <!-- Buttons text -->
+    <color name="colorButtonText">#FFFFFF</color>
 </resources>
