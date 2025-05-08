@@ -5,6 +5,7 @@
 
     <!-- Vectors, Forms elements -->
     <color name="colorSecondary">#B9E1D9</color>
+    <color name="colorSecondaryLight">#E3F3F0</color>"
 
     <!-- Background -->
     <color name="colorBackground">#FFFFFF</color>
