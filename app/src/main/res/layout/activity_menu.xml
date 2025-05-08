@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/main_base" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            style="@style/TitleStyle"
+            android:text="@string/menuPrincipal"
+            android:layout_marginBottom="60dp"/>
+
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_altaCliente"
+            android:text="@string/altaCliente" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_pagarCuota"
+            android:text="@string/pagarCuota" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_listarMorosos"
+            android:text="@string/listarMorosos" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_emitirCarnet"
+            android:text="@string/emitirCarnet" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -6,4 +6,9 @@
     <string name="password">******</string>
     <string name="login">Ingresar</string>
     <string name="main_logo">main logo</string>
+    <string name="menuPrincipal">MENU PRINCIPAL</string>
+    <string name="altaCliente">ALTA CLIENTE</string>
+    <string name="pagarCuota">PAGAR CUOTA</string>
+    <string name="listarMorosos">LISTAR MOROSOS</string>
+    <string name="emitirCarnet">EMITIR CARNET</string>
 </resources>
