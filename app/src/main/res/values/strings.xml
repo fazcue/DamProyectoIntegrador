@@ -11,4 +11,6 @@
     <string name="pagarCuota">PAGAR CUOTA</string>
     <string name="listarMorosos">LISTAR MOROSOS</string>
     <string name="emitirCarnet">EMITIR CARNET</string>
+    <string name="usernameLabel">usuario:</string>
+    <string name="passwordLabel">contraseña:</string>
 </resources>
