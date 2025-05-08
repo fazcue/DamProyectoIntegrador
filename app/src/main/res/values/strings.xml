@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">DamProyectoIntegrador</string>
+    <string name="app_name">CLUB DEPORTIVO</string>
     <string name="stain">stain</string>
     <string name="circle">circle</string>
     <string name="username">Ej: Jose</string>
     <string name="password">******</string>
+    <string name="login">Ingresar</string>
+    <string name="main_logo">main logo</string>
 </resources>
