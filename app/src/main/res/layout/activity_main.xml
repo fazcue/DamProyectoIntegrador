@@ -16,9 +16,23 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/app_name"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorTitle"
             android:textSize="18sp"
             android:gravity="center"/>
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:id="@+id/username"
+            android:autofillHints=""
+            android:hint="@string/username"
+            android:inputType="text" />
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:id="@+id/password"
+            android:autofillHints=""
+            android:hint="@string/password"
+            android:inputType="textPassword" />
 
     </LinearLayout>
 

@@ -2,4 +2,6 @@
     <string name="app_name">DamProyectoIntegrador</string>
     <string name="stain">stain</string>
     <string name="circle">circle</string>
+    <string name="username">Ej: Jose</string>
+    <string name="password">******</string>
 </resources>
