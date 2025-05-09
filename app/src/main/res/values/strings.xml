@@ -11,6 +11,15 @@
     <string name="pagarCuota">PAGAR CUOTA</string>
     <string name="listarMorosos">LISTAR MOROSOS</string>
     <string name="emitirCarnet">EMITIR CARNET</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="buscar">BUSCAR</string>
+    <string name="socio">Socio</string>
+    <string name="noSocio">No socio</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="DNI">DNI</string>
+    <string name="DNIhint">14276579</string>
+    <string name="aptoFisico">Apto Fisico</string>
     <string name="usernameLabel">usuario:</string>
     <string name="passwordLabel">contraseña:</string>
 </resources>
