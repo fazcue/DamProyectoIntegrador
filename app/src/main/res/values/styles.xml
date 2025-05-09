@@ -10,6 +10,13 @@
         <item name="android:padding">10dp</item>
     </style>
 
+    <style name="LabelStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">310dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorFormText</item>
+    </style>
+
     <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:layout_width">310dp</item>
         <item name="android:layout_height">60dp</item>
