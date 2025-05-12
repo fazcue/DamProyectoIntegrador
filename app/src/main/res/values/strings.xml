@@ -22,4 +22,8 @@
     <string name="aptoFisico">Apto Fisico</string>
     <string name="usernameLabel">usuario:</string>
     <string name="passwordLabel">contraseña:</string>
+    <string name="socio_n">Socio Nº</string>
+    <string name="dni">DNI</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="v_lido_hasta">Válido hasta</string>
 </resources>
