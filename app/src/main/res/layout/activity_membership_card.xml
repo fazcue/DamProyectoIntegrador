@@ -1,0 +1,95 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/main_base" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="Carnet de Socio" />
+
+        <TextView
+            android:id="@+id/lbl_socio"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="Socio Nº"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/nroSocio"
+            style="@style/EditTextStyle"
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <TextView
+            android:id="@+id/lbl_nombre"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre completo"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/nombre"
+            style="@style/EditTextStyle"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:autofillHints=""
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <TextView
+            android:id="@+id/lbl_vencimiento"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="Válido hasta"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/vencimiento"
+            style="@style/EditTextStyle"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:autofillHints=""
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <TextView
+            android:id="@+id/lbl_dni"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="DNI"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/dni"
+            style="@style/EditTextStyle"
+            android:layout_width="310dp"
+            android:layout_height="60dp"
+            android:autofillHints=""
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <Button
+            android:id="@+id/btn_imprimir"
+            style="@style/ButtonStyle"
+            android:text="IMPRIMIR" />
+
+    </LinearLayout>
+
+</FrameLayout>
