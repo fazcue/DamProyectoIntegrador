@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/main_base" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TitleStyle"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/pagar_cuota" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-30dp"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="@string/step_two"
+            android:src="@drawable/ic_two" />
+
+        <TextView
+            style="@style/SubtitleStyle"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/registrar_pago" />
+
+        <TextView
+            android:id="@+id/lbl_cliente"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cliente"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_nombre"
+            style="@style/EditTextStyle"
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <TextView
+            android:id="@+id/lbl_vencimiento"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="@string/vencimiento"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_vencimento"
+            style="@style/EditTextStyle"
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <TextView
+            android:id="@+id/lbl_monto"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="@string/monto_a_abonar"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_monto"
+            style="@style/EditTextStyle"
+            android:enabled="false"
+            android:inputType="text"
+            android:textColorHint="#A9A7A7" />
+
+        <EditText
+            android:id="@+id/et_forma"
+            style="@style/EditTextStyle"
+            android:autofillHints=""
+            android:hint="@string/forma_de_pago"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/et_cuota"
+            style="@style/EditTextStyle"
+            android:autofillHints=""
+            android:hint="@string/cuotas"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_pagar"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/pagar" />
+
+    </LinearLayout>
+</FrameLayout>

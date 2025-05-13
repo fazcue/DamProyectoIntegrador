@@ -25,13 +25,16 @@
     <string name="buscar_cliente">BUSCAR CLIENTE</string>
     <string name="pagar_cuota">PAGAR CUOTA</string>
     <string name="step_one">step one</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="step_two">step two</string>
     <string name="socio_n">Socio Nº</string>
     <string name="dni">DNI</string>
     <string name="nombre_completo">Nombre completo</string>
     <string name="v_lido_hasta">Válido hasta</string>
+    <string name="registrar_pago">REGISTRAR PAGO</string>
+    <string name="pagar">PAGAR</string>
+    <string name="cliente">Cliente</string>
+    <string name="vencimiento">Vencimiento</string>
+    <string name="monto_a_abonar">Monto a abonar</string>
+    <string name="forma_de_pago">Forma de pago</string>
+    <string name="cuotas">Cuotas</string>
 </resources>
