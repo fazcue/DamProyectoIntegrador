@@ -20,8 +20,8 @@
     <string name="apellido">Apellido</string>
     <string name="DNIhint">14276579</string>
     <string name="aptoFisico">Apto Fisico</string>
-    <string name="usernameLabel">usuario:</string>
-    <string name="passwordLabel">contraseña:</string>
+    <string name="usernameLabel">Usuario:</string>
+    <string name="passwordLabel">Contraseña:</string>
     <string name="buscar_cliente">BUSCAR CLIENTE</string>
     <string name="pagar_cuota">PAGAR CUOTA</string>
     <string name="step_one">step one</string>
