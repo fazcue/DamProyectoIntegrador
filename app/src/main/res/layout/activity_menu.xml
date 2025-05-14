@@ -6,37 +6,52 @@
 
     <include layout="@layout/main_base" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:fillViewport="true"
+        android:paddingBottom="90dp" >
+ 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <TextView
-            style="@style/TitleStyle"
-            android:text="@string/menuPrincipal"
-            android:layout_marginBottom="60dp"/>
+            <TextView
+                style="@style/TitleStyle"
+                android:text="@string/menuPrincipal"
+                android:layout_marginBottom="60dp"/>
 
-        <Button
-            style="@style/ButtonStyle"
-            android:id="@+id/btn_altaCliente"
-            android:text="@string/altaCliente" />
+            <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/btn_altaCliente"
+                android:text="@string/altaCliente" />
 
-        <Button
-            style="@style/ButtonStyle"
-            android:id="@+id/btn_pagarCuota"
-            android:text="@string/pagarCuota" />
+            <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/btn_pagarCuota"
+                android:text="@string/pagarCuota" />
 
-        <Button
-            style="@style/ButtonStyle"
-            android:id="@+id/btn_listarMorosos"
-            android:text="@string/listarMorosos" />
+            <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/btn_listarMorosos"
+                android:text="@string/listarMorosos" />
 
-        <Button
-            style="@style/ButtonStyle"
-            android:id="@+id/btn_emitirCarnet"
-            android:text="@string/emitirCarnet" />
+            <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/btn_emitirCarnet"
+                android:text="@string/emitirCarnet" />
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/BottomNavStyle"
+        app:menu="@menu/bottom_nav_one_element"
+        app:itemIconTint="@color/colorButtonText"
+        app:itemTextColor="@color/colorButtonText" />
 
 </FrameLayout>
