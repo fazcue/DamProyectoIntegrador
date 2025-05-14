@@ -18,77 +18,79 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
-            android:text="Carnet de Socio" />
+            android:text="@string/carnetSocio"
+            />
 
         <TextView
             android:id="@+id/lbl_socio"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="Socio Nº"
+            android:text="@string/socio_n"
             android:textSize="16sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/nroSocio"
             style="@style/EditTextStyle"
             android:enabled="false"
-            android:inputType="text"
+            android:text="@string/hint_nro_socio"
             android:textColorHint="#A9A7A7" />
 
         <TextView
             android:id="@+id/lbl_nombre"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="Nombre completo"
+            android:text="@string/nombre_completo"
             android:textSize="16sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/nombre"
             style="@style/EditTextStyle"
             android:layout_width="310dp"
             android:layout_height="60dp"
             android:autofillHints=""
             android:enabled="false"
-            android:inputType="text"
+            android:text="@string/hint_nombre_completo"
             android:textColorHint="#A9A7A7" />
 
         <TextView
             android:id="@+id/lbl_vencimiento"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="Válido hasta"
+            android:text="@string/v_lido_hasta"
             android:textSize="16sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/vencimiento"
             style="@style/EditTextStyle"
             android:layout_width="310dp"
             android:layout_height="60dp"
             android:autofillHints=""
             android:enabled="false"
-            android:inputType="text"
+            android:text="@string/hint_fecha_vencimiento"
             android:textColorHint="#A9A7A7" />
 
         <TextView
             android:id="@+id/lbl_dni"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="DNI"
+            android:text="@string/DNI"
             android:textSize="16sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/dni"
             style="@style/EditTextStyle"
             android:layout_width="310dp"
             android:layout_height="60dp"
             android:autofillHints=""
             android:enabled="false"
-            android:inputType="text"
-            android:textColorHint="#A9A7A7" />
+            android:text="@string/DNIhint"
+            android:textColorHint="#A9A7A7"
+             />
 
         <Button
             android:id="@+id/btn_imprimir"
             style="@style/ButtonStyle"
-            android:text="IMPRIMIR" />
+            android:text="@string/imprimir" />
 
     </LinearLayout>
 
