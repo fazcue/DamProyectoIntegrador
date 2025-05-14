@@ -44,4 +44,17 @@
     <string name="hint_nro_socio">10</string>
     <string name="hint_nombre_completo">Diego Armando Maradona</string>
     <string name="hint_fecha_vencimiento">03/06/2025</string>
+    <string name="expiration_label">Vencimiento:</string>
+    <string name="label_pay">Monto a abonar:</string>
+    <string name="forma_de_pago">Forma de pago:</string>
+    <string name="cuotas">Cuotas:</string>
+    <string name="salir">Salir</string>
+    <string name="inicio">Inicio</string>
+    <string name="volver">Volver</string>
+    <string name="diego_maradona">Diego Maradona</string>
+    <string name="client_label">Cliente:</string>
+    <string name="expiration">10/04/2025</string>
+    <string name="eight_thousand">$ 8.000,00</string>
+    <string name="dni_label">DNI:</string>
+    <string name="dni_example">Ej: 10</string>
 </resources>
