@@ -70,13 +70,13 @@
 
             <TextView
                 style="@style/LabelStyle"
-                android:text="DNI:" />
+                android:text="@string/dni_label" />
 
             <EditText
                 android:id="@+id/et_dni"
                 style="@style/EditTextStyle"
                 android:autofillHints=""
-                android:hint="Ej: 10"
+                android:hint="@string/dni_example"
                 android:inputType="number" />
 
             <Button
