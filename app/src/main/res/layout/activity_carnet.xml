@@ -1,13 +1,21 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include layout="@layout/main_base" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="90dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="top|center_horizontal"
         android:padding="24dp">
@@ -20,7 +28,7 @@
 
         <TextView
             style="@style/LabelStyle"
-            android:text="@string/DNI" />
+            android:text="@string/dni_label" />
 
         <EditText
             android:id="@+id/DNI"
@@ -34,4 +42,13 @@
             style="@style/ButtonStyle"
             android:text="@string/buscar" />
     </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/BottomNavStyle"
+        app:menu="@menu/bottom_nav_two_elements"
+        app:itemIconTint="@color/colorButtonText"
+        app:itemTextColor="@color/colorButtonText" />
+
 </FrameLayout>

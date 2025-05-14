@@ -75,7 +75,7 @@
                 style="@style/EditTextStyle"
                 android:autofillHints=""
                 android:enabled="false"
-                android:hint="@string/eight_thousand"
+                android:hint="@string/monto"
                 android:inputType="text"
                 android:textColorHint="#A9A7A7" />
 

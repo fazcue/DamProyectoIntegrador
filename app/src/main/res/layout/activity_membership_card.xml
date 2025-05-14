@@ -49,7 +49,7 @@
             android:layout_height="60dp"
             android:autofillHints=""
             android:enabled="false"
-            android:text="@string/hint_nombre_completo"
+            android:text="@string/diego_maradona"
             android:textColorHint="#A9A7A7" />
 
         <TextView
@@ -66,14 +66,14 @@
             android:layout_height="60dp"
             android:autofillHints=""
             android:enabled="false"
-            android:text="@string/hint_fecha_vencimiento"
+            android:text="@string/expiration"
             android:textColorHint="#A9A7A7" />
 
         <TextView
             android:id="@+id/lbl_dni"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
-            android:text="@string/DNI"
+            android:text="@string/dni_label"
             android:textSize="16sp" />
 
         <TextView

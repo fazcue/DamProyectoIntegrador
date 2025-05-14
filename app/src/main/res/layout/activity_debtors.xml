@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/DNI"
+                    android:text="@string/dni_label"
                     android:textStyle="bold" />
 
                 <TextView
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/vencimiento"
+                    android:text="@string/expiration_label"
                     android:textStyle="bold" />
 
             </TableRow>
