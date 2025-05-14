@@ -1,5 +1,4 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +19,6 @@
             android:text="@string/altaCliente" />
 
         <LinearLayout
-            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -28,22 +26,14 @@
 
             <Button
                 android:id="@+id/btn_socio"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+                style="@style/ToggleButtonStyle"
                 android:backgroundTint="#DCE1F0"
-                android:text="@string/socio"
-                android:textColor="@android:color/black" />
+                android:text="@string/socio" />
 
             <Button
                 android:id="@+id/btn_no_socio"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E6F3F0"
-                android:text="@string/noSocio"
-                android:textColor="@android:color/black" />
+                style="@style/ToggleButtonStyle"
+                android:text="@string/noSocio" />
 
         </LinearLayout>
 
@@ -89,9 +79,9 @@
 
             <Switch
                 android:id="@+id/switch_apto_fisico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/SwitchStyle"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
+
         </LinearLayout>
 
         <Button
