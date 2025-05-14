@@ -7,72 +7,86 @@
 
     <include layout="@layout/main_base" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <TextView
-            style="@style/TitleStyle"
-            android:layout_marginTop="-60dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/pagar_cuota" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="0dp"
-            android:contentDescription="@string/step_one"
-            android:src="@drawable/ic_one" />
-
-        <TextView
-            style="@style/SubtitleStyle"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:text="@string/buscar_cliente" />
+        android:fillViewport="true"
+        android:paddingBottom="90dp">
 
         <LinearLayout
-            style="?android:attr/buttonBarStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TitleStyle"
+                android:layout_marginTop="-60dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/pagar_cuota" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="0dp"
+                android:contentDescription="@string/step_one"
+                android:src="@drawable/ic_one" />
+
+            <TextView
+                style="@style/SubtitleStyle"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/buscar_cliente" />
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_socio"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#DCE1F0"
+                    android:text="@string/socio"
+                    android:textColor="@android:color/black" />
+
+                <Button
+                    android:id="@+id/btn_no_socio"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#E6F3F0"
+                    android:text="@string/noSocio"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_dni"
+                style="@style/EditTextStyle"
+                android:autofillHints=""
+                android:hint="@string/DNI"
+                android:inputType="number" />
 
             <Button
-                android:id="@+id/btn_socio"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:backgroundTint="#DCE1F0"
-                android:text="@string/socio"
-                android:textColor="@android:color/black" />
-
-            <Button
-                android:id="@+id/btn_no_socio"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E6F3F0"
-                android:text="@string/noSocio"
-                android:textColor="@android:color/black" />
+                android:id="@+id/btn_buscar"
+                style="@style/ButtonStyle"
+                android:text="@string/buscar" />
 
         </LinearLayout>
+    </ScrollView>
 
-        <EditText
-            android:id="@+id/et_dni"
-            style="@style/EditTextStyle"
-            android:hint="@string/DNI"
-            android:autofillHints=""
-            android:inputType="number" />
-
-        <Button
-            android:id="@+id/btn_buscar"
-            style="@style/ButtonStyle"
-            android:text="@string/buscar" />
-
-    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/BottomNavStyle"
+        app:menu="@menu/bottom_nav_two_elements"
+        app:itemIconTint="@color/colorButtonText"
+        app:itemTextColor="@color/colorButtonText" />
 </FrameLayout>
