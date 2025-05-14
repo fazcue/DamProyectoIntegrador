@@ -1,6 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -45,8 +44,8 @@
                 android:text="@string/client_label" />
 
             <EditText
-                android:id="@+id/et_nombre"
                 style="@style/EditTextStyle"
+                android:id="@+id/et_nombre"
                 android:autofillHints=""
                 android:enabled="false"
                 android:hint="@string/diego_maradona"
@@ -71,8 +70,8 @@
                 android:text="@string/label_pay" />
 
             <EditText
-                android:id="@+id/et_abono"
                 style="@style/EditTextStyle"
+                android:id="@+id/et_abono"
                 android:autofillHints=""
                 android:enabled="false"
                 android:hint="@string/monto"
@@ -84,8 +83,8 @@
                 android:text="@string/forma_de_pago" />
 
             <Spinner
-                android:id="@+id/dropdown_pay"
                 style="@style/DropdownStyle"
+                android:id="@+id/dropdown_pay"
                 android:spinnerMode="dropdown" />
 
             <TextView

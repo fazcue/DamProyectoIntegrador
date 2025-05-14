@@ -32,9 +32,9 @@
     <string name="registrar_pago">REGISTRAR PAGO</string>
     <string name="pagar">PAGAR</string>
     <string name="cliente">Cliente</string>
-    <string name="forma_de_pago">Forma de pago</string>
+    <string name="forma_de_pago">Forma de pago:</string>
     <string name="imprimir">IMPRIMIR</string>
-    <string name="cuotas">Cuotas</string>
+    <string name="cuotas">Cuotas:</string>
     <string name="salir">Salir</string>
     <string name="inicio">Inicio</string>
     <string name="volver">Volver</string>
