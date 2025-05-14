@@ -64,4 +64,15 @@
         <item name="android:layout_gravity">bottom</item>
         <item name="android:background">@color/colorPrimary</item>
     </style>
+
+    <style name="DropdownStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">310dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorFormText</item>
+        <item name="android:background">@android:drawable/btn_dropdown</item>
+    </style>
+
 </resources>
