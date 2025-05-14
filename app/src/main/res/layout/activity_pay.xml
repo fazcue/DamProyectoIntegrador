@@ -76,7 +76,7 @@
                 android:id="@+id/et_dni"
                 style="@style/EditTextStyle"
                 android:autofillHints=""
-                android:hint="@string/dni_example"
+                android:hint="@string/DNIhint"
                 android:inputType="number" />
 
             <Button
