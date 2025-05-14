@@ -68,11 +68,15 @@
 
             </LinearLayout>
 
+            <TextView
+                style="@style/LabelStyle"
+                android:text="DNI:" />
+
             <EditText
                 android:id="@+id/et_dni"
                 style="@style/EditTextStyle"
                 android:autofillHints=""
-                android:hint="@string/DNI"
+                android:hint="Ej: 10"
                 android:inputType="number" />
 
             <Button

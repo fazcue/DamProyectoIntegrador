@@ -79,19 +79,23 @@
                 android:inputType="text"
                 android:textColorHint="#A9A7A7" />
 
-            <EditText
-                android:id="@+id/et_forma"
-                style="@style/EditTextStyle"
-                android:autofillHints=""
-                android:hint="@string/forma_de_pago"
-                android:inputType="number" />
+            <TextView
+                style="@style/LabelStyle"
+                android:text="@string/forma_de_pago" />
 
-            <EditText
-                android:id="@+id/et_cuota"
-                style="@style/EditTextStyle"
-                android:autofillHints=""
-                android:hint="@string/cuotas"
-                android:inputType="number" />
+            <Spinner
+                android:id="@+id/dropdown_pay"
+                style="@style/DropdownStyle"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                style="@style/LabelStyle"
+                android:text="@string/cuotas" />
+
+            <Spinner
+                android:id="@+id/dropdown_fee"
+                style="@style/DropdownStyle"
+                android:spinnerMode="dropdown" />
 
             <Button
                 android:id="@+id/btn_pagar"

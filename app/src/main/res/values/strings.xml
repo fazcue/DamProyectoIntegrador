@@ -35,8 +35,8 @@
     <string name="cliente">Cliente</string>
     <string name="expiration_label">Vencimiento:</string>
     <string name="label_pay">Monto a abonar:</string>
-    <string name="forma_de_pago">Forma de pago</string>
-    <string name="cuotas">Cuotas</string>
+    <string name="forma_de_pago">Forma de pago:</string>
+    <string name="cuotas">Cuotas:</string>
     <string name="salir">Salir</string>
     <string name="inicio">Inicio</string>
     <string name="volver">Volver</string>
