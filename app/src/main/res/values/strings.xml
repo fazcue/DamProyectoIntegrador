@@ -19,6 +19,7 @@
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="DNIhint">14276579</string>
+    <string name="dni_hint_label">DNI</string>
     <string name="aptoFisico">Apto Fisico</string>
     <string name="usernameLabel">Usuario</string>
     <string name="passwordLabel">Contraseña</string>
