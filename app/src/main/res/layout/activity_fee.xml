@@ -52,7 +52,7 @@
                 android:inputType="text"
                 android:textColorHint="#A9A7A7" />
 
-            <TextView2
+            <TextView
                 style="@style/LabelStyle"
                 android:text="@string/expiration_label" />
 
