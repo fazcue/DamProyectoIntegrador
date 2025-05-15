@@ -20,8 +20,8 @@
     <string name="apellido">Apellido</string>
     <string name="DNIhint">14276579</string>
     <string name="aptoFisico">Apto Fisico</string>
-    <string name="usernameLabel">Usuario:</string>
-    <string name="passwordLabel">Contraseña:</string>
+    <string name="usernameLabel">Usuario</string>
+    <string name="passwordLabel">Contraseña</string>
     <string name="buscar_cliente">BUSCAR CLIENTE</string>
     <string name="pagar_cuota">PAGAR CUOTA</string>
     <string name="step_one">step one</string>
@@ -32,18 +32,18 @@
     <string name="registrar_pago">REGISTRAR PAGO</string>
     <string name="pagar">PAGAR</string>
     <string name="cliente">Cliente</string>
-    <string name="forma_de_pago">Forma de pago:</string>
+    <string name="forma_de_pago">Forma de pago</string>
     <string name="imprimir">IMPRIMIR</string>
-    <string name="cuotas">Cuotas:</string>
+    <string name="cuotas">Cuotas</string>
     <string name="salir">Salir</string>
     <string name="inicio">Inicio</string>
     <string name="volver">Volver</string>
     <string name="hint_nro_socio">10</string>
-    <string name="expiration_label">Vencimiento:</string>
-    <string name="label_pay">Monto a abonar:</string>
+    <string name="expiration_label">Vencimiento</string>
+    <string name="label_pay">Monto a abonar</string>
     <string name="diego_maradona">Diego Maradona</string>
-    <string name="client_label">Cliente:</string>
+    <string name="client_label">Cliente</string>
     <string name="expiration">10/04/2025</string>
     <string name="monto">$ 8.000,00</string>
-    <string name="dni_label">DNI:</string>
+    <string name="dni_label">DNI</string>
 </resources>

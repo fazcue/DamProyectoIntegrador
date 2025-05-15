@@ -1,97 +1,113 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <include layout="@layout/main_base" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:fillViewport="true"
+        android:paddingBottom="90dp" >
 
-
-        <TextView
-            android:id="@+id/textView"
-            style="@style/TitleStyle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:text="@string/carnetSocio"
-            />
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <TextView
-            android:id="@+id/lbl_socio"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:text="@string/socio_n"
-            android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/nroSocio"
-            style="@style/EditTextStyle"
-            android:enabled="false"
-            android:text="@string/hint_nro_socio"
-            android:textColorHint="#A9A7A7" />
+            <TextView
+                android:id="@+id/textView"
+                style="@style/TitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:text="@string/carnetSocio"
+                />
 
-        <TextView
-            android:id="@+id/lbl_nombre"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:text="@string/nombre_completo"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/lbl_socio"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:text="@string/socio_n"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/nombre"
-            style="@style/EditTextStyle"
-            android:layout_width="310dp"
-            android:layout_height="60dp"
-            android:autofillHints=""
-            android:enabled="false"
-            android:text="@string/diego_maradona"
-            android:textColorHint="#A9A7A7" />
+            <TextView
+                android:id="@+id/nroSocio"
+                style="@style/EditTextStyle"
+                android:enabled="false"
+                android:text="@string/hint_nro_socio"
+                android:textColorHint="#A9A7A7" />
 
-        <TextView
-            android:id="@+id/lbl_vencimiento"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:text="@string/v_lido_hasta"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/lbl_nombre"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_completo"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/vencimiento"
-            style="@style/EditTextStyle"
-            android:layout_width="310dp"
-            android:layout_height="60dp"
-            android:autofillHints=""
-            android:enabled="false"
-            android:text="@string/expiration"
-            android:textColorHint="#A9A7A7" />
+            <TextView
+                android:id="@+id/nombre"
+                style="@style/EditTextStyle"
+                android:layout_width="310dp"
+                android:layout_height="60dp"
+                android:autofillHints=""
+                android:enabled="false"
+                android:text="@string/diego_maradona"
+                android:textColorHint="#A9A7A7" />
 
-        <TextView
-            android:id="@+id/lbl_dni"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:text="@string/dni_label"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/lbl_vencimiento"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:text="@string/v_lido_hasta"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/dni"
-            style="@style/EditTextStyle"
-            android:layout_width="310dp"
-            android:layout_height="60dp"
-            android:autofillHints=""
-            android:enabled="false"
-            android:text="@string/DNIhint"
-            android:textColorHint="#A9A7A7"
-             />
+            <TextView
+                android:id="@+id/vencimiento"
+                style="@style/EditTextStyle"
+                android:layout_width="310dp"
+                android:layout_height="60dp"
+                android:autofillHints=""
+                android:enabled="false"
+                android:text="@string/expiration"
+                android:textColorHint="#A9A7A7" />
 
-        <Button
-            android:id="@+id/btn_imprimir"
-            style="@style/ButtonStyle"
-            android:text="@string/imprimir" />
+            <TextView
+                android:id="@+id/lbl_dni"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dni_label"
+                android:textSize="16sp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/dni"
+                style="@style/EditTextStyle"
+                android:layout_width="310dp"
+                android:layout_height="60dp"
+                android:autofillHints=""
+                android:enabled="false"
+                android:text="@string/DNIhint"
+                android:textColorHint="#A9A7A7"
+                 />
+
+            <Button
+                android:id="@+id/btn_imprimir"
+                style="@style/ButtonStyle"
+                android:text="@string/imprimir" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/BottomNavStyle"
+        app:menu="@menu/bottom_nav_three_elements"
+        app:itemIconTint="@color/colorButtonText"
+        app:itemTextColor="@color/colorButtonText" />
 
 </FrameLayout>
