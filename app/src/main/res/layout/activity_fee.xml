@@ -52,7 +52,7 @@
                 android:inputType="text"
                 android:textColorHint="#A9A7A7" />
 
-            <TextView
+            <TextView2
                 style="@style/LabelStyle"
                 android:text="@string/expiration_label" />
 
@@ -85,7 +85,8 @@
             <Spinner
                 style="@style/DropdownStyle"
                 android:id="@+id/dropdown_pay"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:entries="@array/formas_de_pago" />
 
             <TextView
                 style="@style/LabelStyle"
@@ -94,7 +95,8 @@
             <Spinner
                 android:id="@+id/dropdown_fee"
                 style="@style/DropdownStyle"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:entries="@array/cuotas" />
 
             <Button
                 android:id="@+id/btn_pagar"
