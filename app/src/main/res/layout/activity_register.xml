@@ -61,7 +61,7 @@
         <EditText
             android:id="@+id/et_dni"
             style="@style/EditTextStyle"
-            android:hint="@string/dni_hint_label"
+            android:hint="@string/dni_label"
             android:autofillHints=""
             android:inputType="number" />
 
