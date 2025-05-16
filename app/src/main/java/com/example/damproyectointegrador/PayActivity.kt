@@ -2,10 +2,10 @@ package com.example.damproyectointegrador
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class PayActivity : AppCompatActivity() {
     private lateinit var btnSearch: Button
@@ -15,6 +15,9 @@ class PayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pay)
 
+        val baseLayout = findViewById<View>(R.id.base_layout)
+        baseLayout.requestFocus()
+
         btnSearch = findViewById(R.id.btn_search)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
@@ -22,8 +25,6 @@ class PayActivity : AppCompatActivity() {
             val intent = Intent(this, FeeActivity::class.java)
             startActivity(intent)
         }
-
-        // Bottom navigation
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
