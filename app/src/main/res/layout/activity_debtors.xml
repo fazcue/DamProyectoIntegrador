@@ -19,10 +19,8 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/listarMorosos"
             style="@style/TitleStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
             android:text="@string/listarMorosos" />
 
