@@ -2,6 +2,7 @@ package com.example.damproyectointegrador
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,6 +18,9 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+        val baseLayout = findViewById<View>(R.id.base_layout)
+        baseLayout.requestFocus()
 
         btnAltaCliente = findViewById(R.id.btn_altaCliente)
         btnPagarCuota = findViewById(R.id.btn_pagarCuota)
@@ -36,7 +40,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
         btnListarMorosos.setOnClickListener {
-            val intent = Intent(this, Debtors::class.java)
+            val intent = Intent(this, DebtorsActivity::class.java)
             startActivity(intent)
         }
 
@@ -45,7 +49,6 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Bottom navigation
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_salir -> {

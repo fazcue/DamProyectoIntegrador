@@ -2,10 +2,9 @@ package com.example.damproyectointegrador
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class FeeActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -14,9 +13,10 @@ class FeeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fee)
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
+        val baseLayout = findViewById<View>(R.id.base_layout)
+        baseLayout.requestFocus()
 
-        // Bottom navigation
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
