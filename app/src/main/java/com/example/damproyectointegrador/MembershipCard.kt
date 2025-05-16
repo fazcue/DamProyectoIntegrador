@@ -27,7 +27,7 @@ class MembershipCard : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_volver -> {
-                    val intent = Intent(this, PayActivity::class.java)
+                    val intent = Intent(this, CarnetActivity::class.java)
                     startActivity(intent)
                     true
                 }
