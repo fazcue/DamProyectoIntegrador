@@ -18,22 +18,15 @@
             android:orientation="vertical"
             android:gravity="center">
 
-
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/carnetSocio"
                 style="@style/TitleStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="60dp"
-                android:text="@string/carnetSocio"
-                />
+                android:text="@string/carnetSocio" />
 
             <TextView
-                android:id="@+id/lbl_socio"
-                android:layout_width="310dp"
-                android:layout_height="wrap_content"
-                android:text="@string/socio_n"
-                android:textSize="16sp" />
+                style="@style/LabelStyle"
+                android:text="@string/socio_n" />
 
             <TextView
                 android:id="@+id/nroSocio"
@@ -43,56 +36,37 @@
                 android:textColorHint="#A9A7A7" />
 
             <TextView
-                android:id="@+id/lbl_nombre"
-                android:layout_width="310dp"
-                android:layout_height="wrap_content"
-                android:text="@string/nombre_completo"
-                android:textSize="16sp" />
+                style="@style/LabelStyle"
+                android:text="@string/nombre_completo" />
 
             <TextView
                 android:id="@+id/nombre"
                 style="@style/EditTextStyle"
-                android:layout_width="310dp"
-                android:layout_height="60dp"
-                android:autofillHints=""
                 android:enabled="false"
                 android:text="@string/diego_maradona"
                 android:textColorHint="#A9A7A7" />
 
             <TextView
-                android:id="@+id/lbl_vencimiento"
-                android:layout_width="310dp"
-                android:layout_height="wrap_content"
-                android:text="@string/v_lido_hasta"
-                android:textSize="16sp" />
+                style="@style/LabelStyle"
+                android:text="@string/v_lido_hasta" />
 
             <TextView
                 android:id="@+id/vencimiento"
                 style="@style/EditTextStyle"
-                android:layout_width="310dp"
-                android:layout_height="60dp"
-                android:autofillHints=""
                 android:enabled="false"
                 android:text="@string/expiration"
                 android:textColorHint="#A9A7A7" />
 
             <TextView
-                android:id="@+id/lbl_dni"
-                android:layout_width="310dp"
-                android:layout_height="wrap_content"
-                android:text="@string/dni_label"
-                android:textSize="16sp" />
+                style="@style/LabelStyle"
+                android:text="@string/dni_label" />
 
             <TextView
                 android:id="@+id/dni"
                 style="@style/EditTextStyle"
-                android:layout_width="310dp"
-                android:layout_height="60dp"
-                android:autofillHints=""
                 android:enabled="false"
                 android:text="@string/DNIhint"
-                android:textColorHint="#A9A7A7"
-                 />
+                android:textColorHint="#A9A7A7" />
 
             <Button
                 android:id="@+id/btn_imprimir"
