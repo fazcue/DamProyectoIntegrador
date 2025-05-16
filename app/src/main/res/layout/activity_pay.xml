@@ -70,7 +70,7 @@
                 android:inputType="number" />
 
             <Button
-                android:id="@+id/btn_buscar"
+                android:id="@+id/btn_search"
                 style="@style/ButtonStyle"
                 android:text="@string/buscar" />
 
