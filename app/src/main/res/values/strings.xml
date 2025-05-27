@@ -54,4 +54,5 @@
         <item>1</item>
         <item>3</item>
     </string-array>
+    <string name="incorrectLoginMessage">Usuario y/o contraseña incorrectos</string>
 </resources>
