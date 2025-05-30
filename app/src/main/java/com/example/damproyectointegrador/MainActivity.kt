@@ -11,6 +11,7 @@ import com.example.damproyectointegrador.db.AppDBHelper
 import com.example.damproyectointegrador.db.UserDAO
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var userDAO: UserDAO
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
@@ -28,24 +29,28 @@ class MainActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.btn_login)
 
         // Initialize the database helper and DAO
-        val dbHelper = AppDBHelper(this)
-        val db = dbHelper.readableDatabase
-        val userDAO = UserDAO(db)
+        val db = AppDBHelper(this).readableDatabase
+        userDAO = UserDAO(db)
 
         // Set click listener for the login button
-        btnLogin.setOnClickListener {
-            val username = etUsername.text.toString().trim()
-            val password = etPassword.text.toString().trim()
+        btnLogin.setOnClickListener{
+            login()
+        }
+    }
 
-            // If the username and password are correct, start the MenuActivity
-            if (userDAO.login(username, password)) {
-                val intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
-            }
-            else {
-                val message = getString(R.string.incorrectLoginMessage)
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-            }
+    private fun login () {
+        val username = etUsername.text.toString().trim()
+        val password = etPassword.text.toString().trim()
+
+        // If the username and password are correct, start the MenuActivity
+        if (userDAO.login(username, password)) {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else {
+            val message = getString(R.string.incorrectLoginMessage)
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
     }
 }
