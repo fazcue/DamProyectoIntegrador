@@ -25,34 +25,36 @@
             android:layout_marginBottom="30dp"
             android:text="@string/altaCliente" />
 
-        <LinearLayout
+        <RadioGroup
+            android:id="@+id/rg_member_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn_socio"
-                style="@style/ToggleButtonStyle"
-                android:backgroundTint="#DCE1F0"
-                android:text="@string/socio" />
+            <RadioButton
+                android:id="@+id/rb_member"
+                style="@style/RadioStyle"
+                android:text="@string/socio"
+                android:button="@null" />
 
-            <Button
-                android:id="@+id/btn_no_socio"
-                style="@style/ToggleButtonStyle"
-                android:text="@string/noSocio" />
+            <RadioButton
+                android:id="@+id/rb_no_member"
+                style="@style/RadioStyle"
+                android:text="@string/noSocio"
+                android:button="@null" />
 
-        </LinearLayout>
+        </RadioGroup>
 
         <EditText
-            android:id="@+id/et_nombre"
+            android:id="@+id/et_firstname"
             style="@style/EditTextStyle"
             android:autofillHints=""
             android:hint="@string/nombre"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/et_apellido"
+            android:id="@+id/et_lastname"
             style="@style/EditTextStyle"
             android:autofillHints=""
             android:hint="@string/apellido"
@@ -85,14 +87,14 @@
                 android:textSize="16sp" />
 
             <Switch
-                android:id="@+id/switch_apto_fisico"
+                android:id="@+id/switch_physical_fitness"
                 style="@style/SwitchStyle"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_registrar"
+            android:id="@+id/btn_register"
             style="@style/ButtonStyle"
             android:text="@string/registrar" />
 
