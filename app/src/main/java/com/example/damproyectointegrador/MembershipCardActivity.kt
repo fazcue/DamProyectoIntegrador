@@ -3,6 +3,7 @@ package com.example.damproyectointegrador
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -15,6 +16,22 @@ class MembershipCardActivity : AppCompatActivity() {
 
         val baseLayout = findViewById<View>(R.id.base_layout)
         baseLayout.requestFocus()
+
+        val tvNombre = findViewById<TextView>(R.id.nombre)
+        val tvDni = findViewById<TextView>(R.id.dni)
+        val tvNroSocio = findViewById<TextView>(R.id.nroSocio)
+        val tvVencimiento = findViewById<TextView>(R.id.vencimiento)
+
+        val nombre = intent.getStringExtra("nombre")
+        val apellido = intent.getStringExtra("apellido")
+        val dni = intent.getStringExtra("dni")
+        val nSocio = intent.getIntExtra("nSocio", 0)
+        val fechaVencimiento = intent.getStringExtra("fechaVencimiento")
+
+        tvNombre.text = getString(R.string.nombre_completo_placeholder, nombre, apellido)
+        tvDni.text = dni
+        tvNroSocio.text = nSocio.toString()
+        tvVencimiento.text = fechaVencimiento
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
