@@ -1,7 +1,9 @@
 package com.example.damproyectointegrador.db
 
+import android.annotation.SuppressLint
 import android.database.sqlite.SQLiteDatabase
 import com.example.damproyectointegrador.entities.EMember
+import java.util.*
 
 class MemberDAO(private val db: SQLiteDatabase) {
     fun getMemberByDni(dni: String): EMember? {
@@ -27,4 +29,26 @@ class MemberDAO(private val db: SQLiteDatabase) {
         cursor.close()
         return member
     }
+
+    @SuppressLint("Range")
+    fun getDebtors(): ArrayList<EMember> {
+        val deudores = ArrayList<EMember>()
+        //val db = writableDatabase
+        val selectQuery = "SELECT c.firstname, c.lastname, c.dni, m.n_licence AS nMember, c.due_fee_date FROM clients c, members m WHERE c.id = m.id_client"
+        val cursor = db.rawQuery(selectQuery, null)
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                val nombre  = cursor.getString(cursor.getColumnIndex("firstname"))
+                val apellidos  = cursor.getString(cursor.getColumnIndex("lastname"))
+                val dni  = cursor.getString(cursor.getColumnIndex("dni"))
+                val dueFeeDate  = cursor.getString(cursor.getColumnIndex("due_fee_date"))
+                val nMember  = cursor.getString(cursor.getColumnIndex("nMember"))
+                val miembro = EMember(nombre, apellidos, dni, dueFeeDate, nMember.toInt())
+                deudores.add(miembro)
+            }
+        }
+        cursor.close()
+        return deudores
+    }
 }
+
