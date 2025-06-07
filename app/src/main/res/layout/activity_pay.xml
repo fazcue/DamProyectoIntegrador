@@ -39,24 +39,26 @@
                 android:layout_marginBottom="0dp"
                 android:text="@string/buscar_cliente" />
 
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/rg_member_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btn_socio"
-                    style="@style/ToggleButtonStyle"
-                    android:backgroundTint="#DCE1F0"
-                    android:text="@string/socio" />
+                <RadioButton
+                    android:id="@+id/rb_member"
+                    style="@style/RadioStyle"
+                    android:text="@string/socio"
+                    android:button="@null" />
 
-                <Button
-                    android:id="@+id/btn_no_socio"
-                    style="@style/ToggleButtonStyle"
-                    android:text="@string/noSocio" />
+                <RadioButton
+                    android:id="@+id/rb_no_member"
+                    style="@style/RadioStyle"
+                    android:text="@string/noSocio"
+                    android:button="@null" />
 
-            </LinearLayout>
+            </RadioGroup>
 
             <TextView
                 style="@style/LabelStyle"
