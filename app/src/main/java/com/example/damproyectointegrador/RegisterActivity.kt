@@ -162,12 +162,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun getDueDate(): String {
         val calendar = Calendar.getInstance()
-        if (rbMember.isChecked) {
-            calendar.add(Calendar.MONTH, 1)
-        } else {
-            calendar.add(Calendar.DAY_OF_MONTH, 1)
-        }
-
         return SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(calendar.time)
     }
 

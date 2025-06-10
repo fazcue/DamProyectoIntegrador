@@ -13,12 +13,18 @@ import com.example.damproyectointegrador.db.AppDBHelper
 import com.example.damproyectointegrador.db.PaymentDAO
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.NumberFormat
-import java.util.*
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class FeeActivity : AppCompatActivity() {
+
+    // Base de datos y DAO
     private lateinit var db: SQLiteDatabase
     private lateinit var paymentDAO: PaymentDAO
 
+    // Componentes de la interfaz
     private lateinit var tvNombre: TextView
     private lateinit var tvVencimiento: TextView
     private lateinit var tvAbono: TextView
@@ -27,19 +33,23 @@ class FeeActivity : AppCompatActivity() {
     private lateinit var btnPagar: Button
     private lateinit var bottomNavigationView: BottomNavigationView
 
+    // Datos del cliente
     private var clientType: String = ""
     private var clientDni: String = ""
-    private var memberAmount: Double = 50000.0 // $50,000 para socios
-    private var noMemberAmount: Double = 15000.0 // $15,000 para no socios
+
+    // Montos de abono
+    private val memberAmount: Double = 50000.0     // $50.000 para socios
+    private val noMemberAmount: Double = 15000.0   // $15.000 para no socios
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fee)
 
+        // Asegura que el foco no quede en un campo de texto
         val baseLayout = findViewById<View>(R.id.base_layout)
         baseLayout.requestFocus()
 
-        // Initialize views
+        // Inicializar vistas
         tvNombre = findViewById(R.id.et_nombre)
         tvVencimiento = findViewById(R.id.et_vencimiento)
         tvAbono = findViewById(R.id.et_abono)
@@ -48,34 +58,31 @@ class FeeActivity : AppCompatActivity() {
         btnPagar = findViewById(R.id.btn_pagar)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
-        // Initialize database & DAO
+        // Inicializar base de datos y DAO
         db = AppDBHelper(this).writableDatabase
         paymentDAO = PaymentDAO(db)
 
-        // Get client data from intent
+        // Obtener datos del cliente desde el intent
         getClientDataFromIntent()
 
-        // Set click listener for the pay button
+        // Acción del botón "Pagar"
         btnPagar.setOnClickListener {
             processPayment()
         }
 
-        // Set click listener for the bottom navigation
+        // Navegación inferior
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_volver -> {
-                    val intent = Intent(this, PayActivity::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, PayActivity::class.java))
                     true
                 }
                 R.id.item_home -> {
-                    val intent = Intent(this, MenuActivity::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, MenuActivity::class.java))
                     true
                 }
                 R.id.item_salir -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, MainActivity::class.java))
                     true
                 }
                 else -> false
@@ -83,6 +90,7 @@ class FeeActivity : AppCompatActivity() {
         }
     }
 
+    // Extrae y muestra los datos del cliente
     private fun getClientDataFromIntent() {
         clientType = intent.getStringExtra("client_type") ?: ""
         val firstname = intent.getStringExtra("firstname") ?: ""
@@ -90,38 +98,45 @@ class FeeActivity : AppCompatActivity() {
         clientDni = intent.getStringExtra("dni") ?: ""
         val dueFeeDate = intent.getStringExtra("due_fee_date") ?: ""
 
-        // Set client name
-        tvNombre.text = "$firstname $lastname"
+        // Mostrar nombre completo
+        tvNombre.text = getString(R.string.nombre_completo_placeholder, firstname, lastname)
 
-        // Set due date
-        tvVencimiento.text = dueFeeDate
+        // Calcular y mostrar la próxima fecha de vencimiento
+        val nextDueDate = calculateNextDueDate(dueFeeDate)
+        tvVencimiento.text = nextDueDate
 
-        // Set amount based on client type
+        // Mostrar monto a abonar según tipo de cliente
         val amount = if (clientType == "member") memberAmount else noMemberAmount
         val formattedAmount = NumberFormat.getCurrencyInstance(Locale("es", "AR")).format(amount)
         tvAbono.text = formattedAmount
+    }
 
-        // Add member number if it's a member
-        if (clientType == "member") {
-            val nMember = intent.getIntExtra("n_member", 0)
-            tvNombre.text = "$firstname $lastname (Socio Nº $nMember)"
+    // Calcula la próxima fecha de vencimiento (1 mes para socios, 1 día para no socios)
+    private fun calculateNextDueDate(currentDueDateStr: String): String {
+        return try {
+            val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
+            val currentDueDate = dateFormat.parse(currentDueDateStr)
+            val calendar = Calendar.getInstance()
+            calendar.time = currentDueDate ?: Date()
+
+            if (clientType == "member") {
+                calendar.add(Calendar.MONTH, 1)
+            } else {
+                calendar.add(Calendar.DAY_OF_MONTH, 1)
+            }
+
+            dateFormat.format(calendar.time)
+        } catch (e: Exception) {
+            currentDueDateStr // Si ocurre un error, se muestra la fecha original
         }
     }
 
+    // Procesa el pago y actualiza la base de datos
     private fun processPayment() {
-        val paymentMethod = spinnerPaymentMethod.selectedItem.toString()
-        val installments = spinnerInstallments.selectedItem.toString().toInt()
-        val amount = if (clientType == "member") memberAmount else noMemberAmount
-
         db.beginTransaction()
-        var success = false
 
         try {
-            // Record payment (you can implement this method in PaymentDAO if needed)
-            paymentDAO.recordPayment(clientDni, amount, paymentMethod, installments)
-
-            // Update due date based on client type
-            success = if (clientType == "member") {
+            val success = if (clientType == "member") {
                 paymentDAO.updateMemberDueDate(clientDni)
             } else {
                 paymentDAO.updateNoMemberDueDate(clientDni)
@@ -131,7 +146,7 @@ class FeeActivity : AppCompatActivity() {
                 db.setTransactionSuccessful()
                 showToast("Pago registrado correctamente")
 
-                // Navigate back to menu
+                // Volver al menú principal
                 val intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -145,6 +160,7 @@ class FeeActivity : AppCompatActivity() {
         }
     }
 
+    // Muestra un mensaje al usuario
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
