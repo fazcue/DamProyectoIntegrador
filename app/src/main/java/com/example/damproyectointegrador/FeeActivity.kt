@@ -114,7 +114,7 @@ class FeeActivity : AppCompatActivity() {
     // Calcula la próxima fecha de vencimiento (1 mes para socios, 1 día para no socios)
     private fun calculateNextDueDate(currentDueDateStr: String): String {
         return try {
-            val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
             val currentDueDate = dateFormat.parse(currentDueDateStr)
             val calendar = Calendar.getInstance()
             calendar.time = currentDueDate ?: Date()

@@ -20,8 +20,8 @@ class PaymentDAO(private val db: SQLiteDatabase) {
             cursor.close()
 
             return try {
-                // Parsear la fecha actual en formato yyyy/MM/dd
-                val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
+                // Parsear la fecha actual en formato yyyy-MM-dd
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                 val currentDueDate = dateFormat.parse(currentDueDateStr)
 
                 // Agregar 1 mes a la fecha actual
@@ -61,8 +61,8 @@ class PaymentDAO(private val db: SQLiteDatabase) {
             cursor.close()
 
             return try {
-                // Parsear la fecha actual en formato yyyy/MM/dd
-                val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
+                // Parsear la fecha actual en formato yyyy-MM-dd
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                 val currentDueDate = dateFormat.parse(currentDueDateStr)
 
                 // Agregar 1 día a la fecha actual
