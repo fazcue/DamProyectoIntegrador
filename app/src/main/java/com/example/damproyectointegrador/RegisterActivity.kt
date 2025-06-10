@@ -162,7 +162,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun getDueDate(): String {
         val calendar = Calendar.getInstance()
-        return SimpleDateFormat("yyyy/MM/dd", Locale.getDefault()).format(calendar.time)
+        return SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(calendar.time)
     }
 
     private fun showToast(message: String) {
