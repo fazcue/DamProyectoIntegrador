@@ -3,6 +3,7 @@ package com.example.damproyectointegrador.db
 import android.annotation.SuppressLint
 import android.database.sqlite.SQLiteDatabase
 import com.example.damproyectointegrador.entities.EMember
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MemberDAO(private val db: SQLiteDatabase) {
@@ -33,11 +34,17 @@ class MemberDAO(private val db: SQLiteDatabase) {
     @SuppressLint("Range")
     fun getDebtors(): ArrayList<EMember> {
         val deudores = ArrayList<EMember>()
-        //val db = writableDatabase
-        val selectQuery = "SELECT c.firstname, c.lastname, c.dni, m.n_licence AS nMember, c.due_fee_date FROM clients c, members m WHERE c.id = m.id_client"
+
+        val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        val selectQuery = """
+            SELECT c.firstname, c.lastname, c.dni, m.n_licence AS nMember, c.due_fee_date 
+            FROM clients c, members m 
+            WHERE c.id = m.id_client AND c.due_fee_date < '$currentDate'
+            """.trimIndent()
+
         val cursor = db.rawQuery(selectQuery, null)
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
+        cursor.use{  //garantiza el cierre automático del cursor
+            while (it.moveToNext()) {
                 val nombre  = cursor.getString(cursor.getColumnIndex("firstname"))
                 val apellidos  = cursor.getString(cursor.getColumnIndex("lastname"))
                 val dni  = cursor.getString(cursor.getColumnIndex("dni"))
@@ -47,7 +54,7 @@ class MemberDAO(private val db: SQLiteDatabase) {
                 deudores.add(miembro)
             }
         }
-        cursor.close()
+
         return deudores
     }
 }
