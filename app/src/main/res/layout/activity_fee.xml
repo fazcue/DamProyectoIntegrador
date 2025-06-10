@@ -43,39 +43,33 @@
                 style="@style/LabelStyle"
                 android:text="@string/client_label" />
 
-            <EditText
-                style="@style/EditTextStyle"
+            <TextView
                 android:id="@+id/et_nombre"
-                android:autofillHints=""
+                style="@style/EditTextStyle"
                 android:enabled="false"
-                android:hint="@string/diego_maradona"
-                android:inputType="text"
+                android:text="@string/diego_maradona"
                 android:textColorHint="#A9A7A7" />
 
             <TextView
                 style="@style/LabelStyle"
                 android:text="@string/expiration_label" />
 
-            <EditText
+            <TextView
                 android:id="@+id/et_vencimiento"
                 style="@style/EditTextStyle"
-                android:autofillHints=""
                 android:enabled="false"
-                android:hint="@string/expiration"
-                android:inputType="text"
+                android:text="@string/expiration"
                 android:textColorHint="#A9A7A7" />
 
             <TextView
                 style="@style/LabelStyle"
                 android:text="@string/label_pay" />
 
-            <EditText
-                style="@style/EditTextStyle"
+            <TextView
                 android:id="@+id/et_abono"
-                android:autofillHints=""
+                style="@style/EditTextStyle"
                 android:enabled="false"
-                android:hint="@string/monto"
-                android:inputType="text"
+                android:text="@string/monto"
                 android:textColorHint="#A9A7A7" />
 
             <TextView
