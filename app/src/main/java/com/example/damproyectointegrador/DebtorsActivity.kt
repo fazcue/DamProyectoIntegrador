@@ -1,8 +1,10 @@
 package com.example.damproyectointegrador
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +18,13 @@ class DebtorsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DebtorsAdapter
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_debtors)
+
+        val tvMensaje = findViewById<TextView>(R.id.tvMensaje)
+        tvMensaje.text = ""
 
         // Configuración inicial
         val baseLayout = findViewById<View>(R.id.base_layout)
@@ -36,7 +42,13 @@ class DebtorsActivity : AppCompatActivity() {
         // Obtener y mostrar deudores
         val debtors = memberDAO.getDebtors()
         adapter = DebtorsAdapter(debtors)
-        recyclerView.adapter = adapter
+
+        if (adapter.itemCount == 0){
+            tvMensaje.text = "No se registran deudores a la fecha";
+        }
+        else {
+            recyclerView.adapter = adapter
+        }
 
         // Configuración del menú inferior
         setupBottomNavigation()

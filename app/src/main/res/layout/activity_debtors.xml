@@ -41,11 +41,18 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/debtorsRecyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="297dp"
+                        android:layout_height="105dp"
                         android:layout_above="@id/bottom_navigation"
                         android:padding="8dp"
                         tools:ignore="NotSibling" />
+
+                    <TextView
+                        android:id="@+id/tvMensaje"
+                        style="@style/TitleStyle"
+                        android:textSize="40sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="145dp" />
 
                 </RelativeLayout>
 
