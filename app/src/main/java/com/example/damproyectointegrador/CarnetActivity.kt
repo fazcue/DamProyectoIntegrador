@@ -41,18 +41,33 @@ class CarnetActivity : AppCompatActivity() {
         }
 
             val member = memberDAO.getMemberByDni(dni)
+
             if (member != null) {
-                val intent = Intent(this, MembershipCardActivity::class.java).apply {
-                    putExtra("nombre", member.firstname)
-                    putExtra("apellido", member.lastname)
-                    putExtra("dni", member.dni)
-                    putExtra("nSocio", member.nMember)
-                    putExtra("fechaVencimiento", member.dueFeeDate)
+                val dateFormat = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+                val dueDate = try {
+                    dateFormat.parse(member.dueFeeDate)
+                } catch (e: Exception) {
+                    null
                 }
-                startActivity(intent)
+
+                val currentDate = java.util.Calendar.getInstance().time
+
+                if (dueDate == null || dueDate.before(currentDate) || dueDate == currentDate) {
+                    Toast.makeText(this, "No se puede emitir el carnet porque el socio adeuda cuota/s", Toast.LENGTH_LONG).show()
+                } else {
+                    val intent = Intent(this, MembershipCardActivity::class.java).apply {
+                        putExtra("nombre", member.firstname)
+                        putExtra("apellido", member.lastname)
+                        putExtra("dni", member.dni)
+                        putExtra("nSocio", member.nMember)
+                        putExtra("fechaVencimiento", member.dueFeeDate)
+                    }
+                    startActivity(intent)
+                }
             } else {
                 Toast.makeText(this, "Socio no encontrado", Toast.LENGTH_SHORT).show()
             }
+
             etDni.text.clear()
             etDni.clearFocus()
         }

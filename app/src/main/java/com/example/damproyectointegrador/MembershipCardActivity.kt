@@ -3,12 +3,15 @@ package com.example.damproyectointegrador
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.Toast
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MembershipCardActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var btnImprimir: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,8 @@ class MembershipCardActivity : AppCompatActivity() {
         val tvDni = findViewById<TextView>(R.id.dni)
         val tvNroSocio = findViewById<TextView>(R.id.nroSocio)
         val tvVencimiento = findViewById<TextView>(R.id.vencimiento)
+        btnImprimir = findViewById(R.id.btn_imprimir)
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
 
         val nombre = intent.getStringExtra("nombre")
         val apellido = intent.getStringExtra("apellido")
@@ -33,7 +38,9 @@ class MembershipCardActivity : AppCompatActivity() {
         tvNroSocio.text = nSocio.toString()
         tvVencimiento.text = fechaVencimiento
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
+        btnImprimir.setOnClickListener {
+            Toast.makeText(this, "Carnet impreso correctamente", Toast.LENGTH_SHORT).show()
+        }
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
