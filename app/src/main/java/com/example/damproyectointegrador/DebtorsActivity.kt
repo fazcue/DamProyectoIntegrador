@@ -44,7 +44,7 @@ class DebtorsActivity : AppCompatActivity() {
         adapter = DebtorsAdapter(debtors)
 
         if (adapter.itemCount == 0){
-            tvMensaje.text = "No se registran deudores a la fecha";
+            tvMensaje.text = "No se registran deudores a la fecha"
         }
         else {
             recyclerView.adapter = adapter
