@@ -41,11 +41,12 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/debtorsRecyclerView"
-                        android:layout_width="297dp"
-                        android:layout_height="105dp"
-                        android:layout_above="@id/bottom_navigation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
                         android:padding="8dp"
-                        tools:ignore="NotSibling" />
+                        tools:ignore="NotSibling"
+                        tools:listitem="@layout/item_debtor" />
 
                     <TextView
                         android:id="@+id/tvMensaje"
