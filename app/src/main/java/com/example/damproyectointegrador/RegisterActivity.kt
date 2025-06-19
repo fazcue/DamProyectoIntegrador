@@ -126,14 +126,20 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         // Commit the transaction
+        val intent = Intent(this, ResultActivity::class.java)
+        var message = "Error al registrar el cliente"
+
         if (success) {
             db.setTransactionSuccessful()
-            showToast("Cliente registrado correctamente")
-            clearForm()
-        } else {
-            showToast("Error al registrar el cliente o tipo de cliente")
+            message = if (rbMember.isChecked) "'Socio' registrado exitosamente" else "'No socio' registrado exitosamente";
         }
+
         db.endTransaction()
+
+        // Show result
+        intent.putExtra("message", message)
+        startActivity(intent)
+        finish()
     }
 
     private fun isValidForm(): Boolean {
@@ -167,14 +173,5 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun clearForm() {
-        etDNI.text.clear()
-        etFirstname.text.clear()
-        etLastname.text.clear()
-        switchPhysicalFitness.isChecked = false
-        rgMemberType.clearCheck()
-        updateRadioStyle()
     }
 }
