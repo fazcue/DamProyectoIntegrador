@@ -39,7 +39,7 @@ class MemberDAO(private val db: SQLiteDatabase) {
         val selectQuery = """
             SELECT c.firstname, c.lastname, c.dni, m.n_licence AS nMember, c.due_fee_date 
             FROM clients c, members m 
-            WHERE c.id = m.id_client AND c.due_fee_date < '$currentDate'
+            WHERE c.id = m.id_client AND c.due_fee_date <= '$currentDate'
             """.trimIndent()
 
         val cursor = db.rawQuery(selectQuery, null)
