@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class AppDBHelper(context: Context) : SQLiteOpenHelper(context, "clubDeportivo7", null, 20) {
+class AppDBHelper(context: Context) : SQLiteOpenHelper(context, "clubDeportivo7", null, 22) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("""
             CREATE TABLE IF NOT EXISTS users (
