@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+
 import androidx.appcompat.app.AppCompatActivity
 import com.example.damproyectointegrador.db.AppDBHelper
 import com.example.damproyectointegrador.db.PaymentDAO
@@ -144,10 +145,10 @@ class FeeActivity : AppCompatActivity() {
 
             if (success) {
                 db.setTransactionSuccessful()
-                showToast("Pago registrado correctamente")
 
-                // Volver al menú principal
-                val intent = Intent(this, MenuActivity::class.java)
+                // Redirigir a ResultActivity con mensaje de éxito
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("message", "El pago se ha registrado correctamente")
                 startActivity(intent)
                 finish()
             } else {
@@ -160,7 +161,7 @@ class FeeActivity : AppCompatActivity() {
         }
     }
 
-    // Muestra un mensaje al usuario
+    // Muestra un mensaje al usuario (para errores)
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
