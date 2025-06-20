@@ -56,17 +56,17 @@ class RegisterActivity : AppCompatActivity() {
         db = AppDBHelper(this).writableDatabase
         clientDAO = ClientDAO(db)
 
+        // Set click listener for the register button
+        btnRegister.setOnClickListener {
+            registerClient()
+        }
+
         // Set click listener for the radio buttons
         rbMember.setOnClickListener {
             updateRadioStyle()
         }
         rbNoMember.setOnClickListener {
             updateRadioStyle()
-        }
-
-        // Set click listener for the register button
-        btnRegister.setOnClickListener {
-            registerClient()
         }
 
         // Set click listener for the bottom navigation
@@ -102,21 +102,20 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerClient() {
+        var success = false
+        var message = "Error al registrar el cliente"
+
         // Data validations
         if (!isValidForm()) return
-
-        // Due date calculation
-        val dueDate = getDueDate()
 
         // Create new client
         val dni = etDNI.text.toString().trim()
         val firstname = etFirstname.text.toString().trim()
         val lastname = etLastname.text.toString().trim()
-        val newClient = EClient(firstname, lastname, dni, dueDate)
+        val newClient = EClient(firstname, lastname, dni, getDueDate())
 
         // Register the client
         db.beginTransaction()
-        var success = false
         val clientId = clientDAO.registerClient(newClient)
 
         // Register the client type if client was registered successfully
@@ -125,10 +124,7 @@ class RegisterActivity : AppCompatActivity() {
             success = res != -1L
         }
 
-        // Commit the transaction
-        val intent = Intent(this, ResultActivity::class.java)
-        var message = "Error al registrar el cliente"
-
+        // Commit the transaction & update message
         if (success) {
             db.setTransactionSuccessful()
             message = if (rbMember.isChecked) "'Socio' registrado exitosamente" else "'No socio' registrado exitosamente";
@@ -137,6 +133,7 @@ class RegisterActivity : AppCompatActivity() {
         db.endTransaction()
 
         // Show result
+        val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra("message", message)
         startActivity(intent)
         finish()
